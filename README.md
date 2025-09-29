@@ -61,29 +61,47 @@ Verify the generated waveform using Tabulation and Model Waveform
 
 MODEL GRAPH:
 
-<img width="512" height="365" alt="image" src="https://github.com/user-attachments/assets/acd787bd-5281-4f1b-802f-1aa39fac9189" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/acd787bd-5281-4f1b-802f-1aa39fac9189" />
 
 
 Program
-
+```
+Am=2.16;
+fm=254;
+fs=254000;
+t=0:1/fs:2/fm;
+m=Am*cos(2*3.14*fm*t);
+subplot(3,1,1);
+plot(t,m);
+Ac=3.16;
+fc=2540;
+c=Ac*cos(2*3.14*fc*t);
+subplot(3,1,2);
+plot(t,c);
+B=2.9;
+efm = Ac*cos((2*3.14*fc*t)+B*sin(2*3.14*fm*t));
+subplot(3,1,3);
+plot(t,efm);
+```
 
 Output Waveform
+
+<img width="940" height="503" alt="image" src="https://github.com/user-attachments/assets/8b8bd3fa-2475-4d41-8a12-4e00da4aca3a" />
 
 
 
 Tabulation
-
-
+<img width="800" height="1000" alt="image" src="https://github.com/user-attachments/assets/6b84072d-add1-4130-8fa5-50789aa64e81" />
 
 Calculation
+<img width="800" height="1000" alt="image" src="https://github.com/user-attachments/assets/ccd085c0-2b0c-40c4-b29c-17c029532cf5" />
 
 
+Frequency Deviation Practical = 833
 
-Frequency Deviation Practical = 
+Modulation Index Practical	= 2.9
 
-Modulation Index Practical	= 
-
-Modulation Index Theoretical	=
+Modulation Index Theoretical	=3.1
 
 
 
